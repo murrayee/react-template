@@ -19,13 +19,10 @@ pipeline {
                 sh 'yarn run test' 
             }
         }
-        stage('Build') { 
+        stage('Deploy') { 
             steps {
                 sh 'yarn run build' 
             }
         }
-        stage('Deploy'){
-            sh 'cp -rf /var/jenkins_home/workspace/gallery-web/build/*  /usr/share/nginx/html'
-         }
     }
 }
