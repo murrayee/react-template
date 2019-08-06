@@ -19,5 +19,10 @@ pipeline {
                 sh 'yarn run test' 
             }
         }
+        stage('Deploy') { 
+            steps {
+                sh 'yarn run build' 
+            }
+        }
     }
 }
