@@ -26,7 +26,7 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh 'sudo cp -rf /var/jenkins_home/workspace/components_master/build/*  /usr/share/nginx/html'
+                sh 'cp -rf /var/jenkins_home/workspace/components_master/build/*  /usr/share/nginx/html'
             }
          }
     }
