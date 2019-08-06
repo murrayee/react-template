@@ -1,12 +1,10 @@
-version: "3"
+version: "1"
 services:
-  jenkins-ci:
-    user: root
-    image: jenkinsci/blueocean
+  nginx:
+    image: nginx:latest
     ports:
-      - "8080:8080"
-      - "50000:50000"
-    volumes:
-      - /data/jenkins_home:/var/jenkins_home
-      - /data/nm_cache:/var/nm_cache
-      - /var/run/docker.sock:/var/run/docker.sock
+      - 80:8002
+  volumes:
+    - /data/jenkins_home/workspace/components_master/nginx.conf:/etc/nginx/conf.d/default.conf
+    - /data/jenkins_home/workspace/components_master/build:/usr/share/nginx/html
+  command: /bin/bash -c "nginx -g 'daemon off;'"

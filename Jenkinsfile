@@ -9,7 +9,7 @@ pipeline {
         CI = 'true'
     }
     stages {
-        stage('Build') { 
+        stage('Install') { 
             steps {
                 sh 'yarn install' 
             }
@@ -19,10 +19,13 @@ pipeline {
                 sh 'yarn run test' 
             }
         }
-        stage('Deploy') { 
+        stage('Build') { 
             steps {
                 sh 'yarn run build' 
             }
         }
+        stage('Deploy'){
+            sh 'cp -rf /var/jenkins_home/workspace/gallery-web/build/*  /usr/share/nginx/html'
+         }
     }
 }
