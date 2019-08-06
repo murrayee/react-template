@@ -24,10 +24,5 @@ pipeline {
                 sh 'yarn run build' 
             }
         }
-        stage('Deploy'){
-            steps {
-                sh 'cp -rf /var/jenkins_home/workspace/components_master/build/*  /usr/share/nginx/html'
-            }
-         }
     }
 }

@@ -10,6 +10,7 @@ const App = () => {
   };
   return (
     <div>
+      <p>测试提交 </p>
       <button onClick={openModal}> open moadl</button>
       <Modal visible={visible}>
         <div>123</div>
