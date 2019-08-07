@@ -25,3 +25,11 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+function test(obj: string | { [key: string]: any }) {
+  console.log(obj);
+}
+
+test({ sub: "213" });
+
+test({ otherKey: 12323 });
