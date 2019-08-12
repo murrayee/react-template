@@ -2,7 +2,9 @@ import React, { useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import cls from "classnames";
 import Portal from "../portal";
-import useAnimation from "../../hooks/useAnimation";
+import { useAnimation, useLockBodyScroll, useClickOutside } from "../../hooks";
+import { MODAL_Z_INDEX } from "../utils/constant";
+import Mask from "../mask";
 import "./index.scss";
 
 interface ModalProps {
@@ -13,19 +15,31 @@ interface ModalProps {
 
 const Modal = (props: ModalProps) => {
   const { children, visible, animation } = props;
-  const ref = useRef(null);
+  const modalRef = useRef(null);
+  const modalContentRef = useRef(null);
   const [zIndex, setZIndex] = useState(Modal.zIndex);
-  const [display, active, set] = useAnimation(ref.current);
+  const [modalVisible, setModalVisible] = useState(visible);
+  const [display, active, set] = useAnimation(modalRef.current);
 
   useEffect(() => {
-    if (visible) {
+    setModalVisible(visible);
+  }, [visible]);
+
+  useEffect(() => {
+    if (modalVisible) {
       Modal.zIndex += 1;
       setZIndex(Modal.zIndex);
     }
-    set(visible);
-  }, [visible, ref, set]);
+    set(modalVisible);
+  }, [modalVisible, modalRef, set]);
 
-  const cname = cls({
+  useClickOutside(modalContentRef, () => {
+    setModalVisible(false);
+  });
+
+  useLockBodyScroll(modalVisible);
+
+  const classNames = cls({
     "ui-modal": true,
     hide: !display,
     [animation]: !active
@@ -33,14 +47,17 @@ const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div ref={ref} className={cname} style={{ zIndex }}>
-        {children}
+      <div ref={modalRef} className={classNames} style={{ zIndex }}>
+        <Mask />
+        <div ref={modalContentRef} className="modal-content">
+          {children}
+        </div>
       </div>
     </Portal>
   );
 };
 
-Modal.zIndex = 10000; // 按实例显示时自增zIndex
+Modal.zIndex = MODAL_Z_INDEX; // 按实例显示时自增zIndex
 
 Modal.propTypes = {
   children: PropTypes.node.isRequired,

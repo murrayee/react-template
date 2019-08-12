@@ -2,19 +2,133 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Modal from "./components/modal";
 import * as serviceWorker from "./serviceWorker";
+import "./index.scss";
 
 const App = () => {
   const [visible, setVisble] = useState<boolean>(false);
   const openModal = () => {
-    setVisble(!visible);
+    setVisble(true);
   };
   return (
-    <div>
-      <p>测试提交 </p>
+    <div className="body-content">
+      <p>duansijia shishabi dashabi ahahhahaah </p>
       <button onClick={openModal}> open moadl</button>
       <Modal visible={visible}>
-        <div>123</div>
+        <ul className="list">
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+          <li>apsdadasdasd</li>
+        </ul>
       </Modal>
+      <ul className="list">
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+        <li>apsdadasdasd</li>
+      </ul>
     </div>
   );
 };

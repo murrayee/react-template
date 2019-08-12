@@ -1,10 +1,9 @@
 .ui-modal {
-    position: absolute;
-    z-index: 10000;
-    top: 80px;
+    position: fixed;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
     overflow-x: hidden;
     overflow-y: auto;
     opacity: 1;
@@ -12,7 +11,8 @@
     transition: all 0.2s ease-out;
     display: flex;
     flex-direction: column;
-    background: black;
+    align-items: center;
+    justify-content: center;
 
     &.hide {
         display: none;
@@ -49,4 +49,17 @@
     &.fade {
         opacity: 0;
     }
+
+    .modal-content {
+        z-index: 100000;
+        background: white;
+        height: 500px;
+        width: 500px;
+        overflow: scroll;
+    }
+}
+
+.ui-modal-open {
+    position: fixed;
+    height: 100%;
 }

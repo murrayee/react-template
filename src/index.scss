@@ -1,0 +1,20 @@
+.body-content {
+    .list {
+        li {
+            height: 50px;
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #f1f1f1;
+
+            ::nth-child(add) {
+                background-color: #ccc
+            }
+
+            ::nth-child(event) {
+                background-color: black
+            }
+        }
+    }
+
+
+}
