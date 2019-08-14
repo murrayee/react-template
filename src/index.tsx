@@ -9,11 +9,15 @@ const App = () => {
   const openModal = () => {
     setVisble(true);
   };
+  const onClose = () => {
+    setVisble(false);
+  };
+
   return (
     <div className="body-content">
       <p>duansijia shishabi dashabi ahahhahaah </p>
       <button onClick={openModal}> open moadl</button>
-      <Modal visible={visible}>
+      <Modal visible={visible} onClose={onClose}>
         <ul className="list">
           <li>apsdadasdasd</li>
           <li>apsdadasdasd</li>
